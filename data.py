@@ -126,8 +126,9 @@ def load_heritage_story_videos():
 
 def load_video_recordings():
     return pd.DataFrame([
-        {"title": "Hindi", "video_path": os.path.join(STORY_VIDEO_DIR, "hindi.mp3")},
+        {"title": "Sinhagad in Hindi", "video_path": os.path.join(STORY_VIDEO_DIR, "hindi.mp3")},
         {"title": "Redfort in Telugu", "video_path": os.path.join(STORY_VIDEO_DIR, "red_fort_telugu.mp3")},
-        {"title": "TajMahal Male", "video_path": os.path.join(STORY_VIDEO_DIR, "taj_mahal_male.mp3")},
-        {"title": "TajMahal Female", "video_path": os.path.join(STORY_VIDEO_DIR, "taj_mahal_female.mp3")}
+        {"title": "TajMahal with Male Voice", "video_path": os.path.join(STORY_VIDEO_DIR, "taj_mahal_male.mp3")},
+        {"title": "TajMahal with Female Voice", "video_path": os.path.join(STORY_VIDEO_DIR, "taj_mahal_female.mp3")}
+
     ])
