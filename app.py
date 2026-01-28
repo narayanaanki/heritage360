@@ -1,4 +1,6 @@
 import streamlit as st
+import os
+
 from styles import inject_global_styles
 from data import (
     load_unesco_sites,
@@ -87,11 +89,12 @@ with tab_explorer:
     render_explorer_note()
 
 # ============================================================
-# HERITAGE STORIES TAB
+# HERITAGE STORIES TAB (VIDEOS)
 # ============================================================
 
 with tab_stories:
     st.markdown("## 📖 Heritage Stories – Video")
+
     for i, row in load_heritage_story_videos().iterrows():
         col1, col2 = st.columns([6, 2])
         col1.markdown(f"**🏛️ {row['site']}**")
@@ -105,6 +108,7 @@ with tab_stories:
 
 with tab_sign:
     st.markdown("## 🤟 Sign Language Videos")
+
     for i, row in load_sign_language_videos().iterrows():
         col1, col2 = st.columns([6, 2])
         col1.markdown(f"**🏛️ {row['site']}**")
@@ -113,11 +117,12 @@ with tab_sign:
             st.session_state.video_title = row["site"]
 
 # ============================================================
-# VIDEO RECORDINGS TAB
+# VIDEO RECORDINGS TAB (AUDIO + VIDEO)
 # ============================================================
 
 with tab_recordings:
     st.markdown("## 🎥 Video Recordings")
+
     for i, row in load_video_recordings().iterrows():
         col1, col2 = st.columns([6, 2])
         col1.markdown(f"**🎞️ {row['title']}**")
@@ -126,14 +131,25 @@ with tab_recordings:
             st.session_state.video_title = row["title"]
 
 # ============================================================
-# VIDEO POPUP
+# UNIVERSAL MEDIA POPUP (FIXED)
 # ============================================================
 
 if st.session_state.video_path:
+
     @st.dialog(f"🎬 {st.session_state.video_title}")
-    def video_popup():
-        st.video(st.session_state.video_path)
+    def media_popup():
+        path = st.session_state.video_path
+        ext = os.path.splitext(path)[1].lower()
+
+        if ext in [".mp4", ".mov", ".webm"]:
+            st.video(path)
+        elif ext in [".mp3", ".wav", ".ogg"]:
+            st.audio(path)
+        else:
+            st.error("Unsupported media format")
+
         if st.button("❌ Close"):
             st.session_state.video_path = None
             st.session_state.video_title = None
-    video_popup()
+
+    media_popup()
