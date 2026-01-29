@@ -55,7 +55,7 @@ tab_home, tab_explorer, tab_stories, tab_sign, tab_recordings = st.tabs(
         "🖼️ Heritage Sites",
         "📖 Heritage Stories",
         "🤟 Sign Language Videos",
-        "🎥 Video Recordings"
+        "🎥 Voice Recordings"
     ]
 )
 
@@ -121,7 +121,7 @@ with tab_sign:
 # ============================================================
 
 with tab_recordings:
-    st.markdown("## 🎥 Video / Audio Recordings")
+    st.markdown("## 🎥 Audio Recordings")
 
     for i, row in load_video_recordings().iterrows():
         col1, col2 = st.columns([6, 2])
@@ -161,3 +161,4 @@ if st.session_state.media_path:
             st.session_state.media_title = None
 
     media_popup()
+
