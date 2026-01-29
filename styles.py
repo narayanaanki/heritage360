@@ -190,7 +190,19 @@ def inject_global_styles():
         font-weight: 600;
         margin-top: 10px;
     }
-
+    st.markdown(
+    """
+    <style>
+        .heritage-title {
+            font-size: 26px;
+            font-weight: 800;
+            color: #8B0000; /* Heritage maroon */
+            margin-bottom: 10px;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
     /* ======================================================
        FOOTER (FINAL FIX)
        ====================================================== */
@@ -253,3 +265,4 @@ def inject_global_styles():
 
     </style>
     """, unsafe_allow_html=True)
+
