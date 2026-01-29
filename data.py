@@ -117,8 +117,7 @@ def load_heritage_story_videos():
         {
             "site": "Red Fort",
             "video_path": os.path.join(STORY_VIDEO_DIR, "red_fort_story.mp4")
-        }
-        ,
+        } ,
         {
             "site": "Sinhagad",
             "video_path": os.path.join(STORY_VIDEO_DIR, "Sinhagad.mp4")
@@ -137,4 +136,5 @@ def load_video_recordings():
         {"title": "TajMahal with Female Voice", "video_path": os.path.join(STORY_VIDEO_DIR, "taj_mahal_female.mp3")}
 
     ])
+
 
