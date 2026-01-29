@@ -88,7 +88,7 @@ def render_unesco_explorer():
     Renders the UNESCO Explorer section with dropdown, image, and description.
     """
 
-    st.markdown("## 🏛️ Explore UNESCO World Heritage Sites")
+    st.markdown("## 🏛️ Explore  Heritage Sites")
 
     # Load data
     unesco_data = get_unesco_images()
@@ -101,7 +101,7 @@ def render_unesco_explorer():
         return
 
     selected_site = st.selectbox(
-        "Select a UNESCO World Heritage Site",
+        "Select a  Heritage Site",
         site_names
     )
 
@@ -162,3 +162,4 @@ def render_explorer_note():
         unsafe_allow_html=True
 
     )
+
