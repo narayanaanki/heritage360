@@ -131,7 +131,7 @@ def render_unesco_explorer():
         st.markdown(
             f"""
             <div class="card">
-                <div class="card-title">{selected_site}</div>
+                <div class="card-title heritage-title">🏛️ {selected_site}</div>
                 <p>{description}</p>
             </div>
             """,
@@ -160,4 +160,5 @@ def render_explorer_note():
         </div>
         """,
         unsafe_allow_html=True
+
     )
